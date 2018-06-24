@@ -279,7 +279,8 @@ public class Porta extends Fragment {
                                         String MY_PREFS_NAME = "dbneec";
                                         SharedPreferences prefs = getActivity().getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
 
-                                        String loaded = prefs.getString("open", "ESCAPE POD");;
+                                        String loaded = prefs.getString("open", "ESCAPE POD");
+                                        ;
 
 
                                         if (loaded.contains("NEEC SOM")) {
@@ -295,6 +296,11 @@ public class Porta extends Fragment {
                                         } else if (loaded.contains("Human Habitat")) {
 
                                             MediaPlayer mp = MediaPlayer.create(getContext(), R.raw.glados_human_habitath);
+                                            mp.start();
+
+                                        } else if (loaded.contains("ELETRIC DOOR")) {
+
+                                            MediaPlayer mp = MediaPlayer.create(getContext(), R.raw.electric_door);
                                             mp.start();
 
                                         } else {

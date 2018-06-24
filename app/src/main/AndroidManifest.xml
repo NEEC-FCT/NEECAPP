@@ -50,7 +50,7 @@
 
 
 
-        <activity android:name="porta.neec.fct.com.neecapp.HomeActibity"
+        <activity android:name="porta.neec.fct.com.neecapp.LoadingScreen"
             android:theme="@style/AppTheme.NoActionBar"
             android:noHistory="true"
             android:screenOrientation="portrait"

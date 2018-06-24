@@ -15,8 +15,8 @@ android {
         applicationId "porta.neec.fct.com.neecapp"
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 11
-        versionName "1.4"
+        versionCode 12
+        versionName "2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
