@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "937892668983",
+    "firebase_url": "https://neec-final.firebaseio.com",
+    "project_id": "neec-final",
+    "storage_bucket": "neec-final.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:937892668983:android:289b815b62c1cae2",
+        "android_client_info": {
+          "package_name": "porta.neec.fct.com.neecapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "937892668983-38b02pb5csmj1nee2743h1r2b8q94dgi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqGV4QRUakkRuSaubscl1LJKu6aTNj1fA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="PxUsage"
+    android:background="#FFFFFF">
+
+    <EditText
+        android:layout_width="324dp"
+        android:layout_height="44dp"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/etchave"
+        android:hint="@string/chave"
+        android:textColorHint="#cbd7eb"
+        android:textColor="#cbd7eb"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginLeft="19dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="294dp"
+        android:layout_marginStart="19dp"
+        tools:layout_editor_absoluteY="292dp"
+        tools:layout_editor_absoluteX="19dp" />
+
+    <Button
+        android:id="@+id/validar"
+        android:layout_width="311dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="357dp"
+        android:background="@drawable/validar"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/etchave"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="@+id/etchave"
+        app:layout_constraintHorizontal_bias="0.666" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="209dp"
+        android:layout_height="189dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="65dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/cadeadoxhave"
+        android:contentDescription=""
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.247"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="8dp"
+        tools:layout_editor_absoluteX="73dp" />
+
+    <ImageView
+        android:id="@+id/imageView29"
+        android:layout_width="wrap_content"
+        android:layout_height="288dp"
+        android:layout_marginBottom="-2dp"
+        android:scaleType="fitEnd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:srcCompat="@drawable/circles"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="230dp"
+        android:textColor="@color/light_blue_grey"
+        android:layout_height="20dp"
+        android:layout_marginLeft="25dp"
+        android:text="Introduza a chave a validar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="274dp" />
+
+</android.support.constraint.ConstraintLayout>

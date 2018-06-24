@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_camara" android:icon="@drawable/chave"
+            android:title="Porta" />
+
+        <item android:id="@+id/nav_slideshow" android:icon="@drawable/user"
+            android:title="Contactos" />
+        <item android:id="@+id/nav_manage" android:icon="@drawable/ic_history_black_48dp"
+            android:title="Historico" />
+
+
+
+
+
+        <item android:id="@+id/about" android:icon="@drawable/ic_hourglass_empty_black_48dp"
+            android:title="Calendário " />
+
+
+
+
+        <item android:id="@+id/defenicoes" android:icon="@drawable/baseline_settings_black_48dp"
+            android:title="Definições" />
+
+
+        <item android:id="@+id/log" android:icon="@drawable/log"
+            android:title="Log out" />
+    </group>
+
+
+
+</menu>

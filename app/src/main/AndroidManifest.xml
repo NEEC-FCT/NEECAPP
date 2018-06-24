@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="porta.neec.fct.com.neecapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    android:hardwareAccelerated="true"
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="NEEC"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+
+        android:screenOrientation="portrait"
+        >
+
+
+
+        <service android:name="porta.neec.fct.com.neecapp.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+
+        <service android:name="porta.neec.fct.com.neecapp.FirebaseIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+
+
+
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/neec_noti" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+
+
+
+        <activity android:name="porta.neec.fct.com.neecapp.HomeActibity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            >
+
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+
+
+
+
+        <activity android:name="porta.neec.fct.com.neecapp.Register"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"
+            />
+
+        <activity android:name="porta.neec.fct.com.neecapp.Esquceu"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+
+
+        <activity android:name="porta.neec.fct.com.neecapp.Novasenha"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+
+
+        <activity android:name="porta.neec.fct.com.neecapp.UserAreaActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="porta.neec.fct.com.neecapp.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"
+             />
+
+
+
+
+        <activity
+            android:name="porta.neec.fct.com.neecapp.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <activity
+            android:name="porta.neec.fct.com.neecapp.semNet"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+
+
+
+
+
+
+
+
+    </application>
+
+</manifest>
