@@ -48,7 +48,7 @@ public class LoadingScreen extends AppCompatActivity {
         }
 
 
-        setContentView(R.layout.activity_home_actibity);
+        setContentView(R.layout.loading_screen);
 
 
         new Handler().postDelayed(new Runnable() {

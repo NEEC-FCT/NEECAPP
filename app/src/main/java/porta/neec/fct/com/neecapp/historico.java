@@ -35,6 +35,17 @@ public class historico extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+
+        final SharedPreferences preferences = this.getActivity().getSharedPreferences("dbneec", Context.MODE_PRIVATE);
+
+        String cargo = preferences.getString("cargo", "erro");
+
+        if (cargo.contains("Membro") || cargo.contains("membro")) {
+            return inflater.inflate(R.layout.forbiden, container, false);
+        }
+
+
         return inflater.inflate(R.layout.historico, container, false);
     }
 
@@ -50,41 +61,43 @@ public class historico extends Fragment {
         }
 
 
-        webView = (WebView) getView().findViewById(R.id.webview);
-
-        WebSettings webSettings = webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-
-
-        //improve webView performance
-        webView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
-        webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
-        webView.getSettings().setAppCacheEnabled(true);
-        webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
-        webSettings.setDomStorageEnabled(true);
-        webSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
-        webSettings.setUseWideViewPort(true);
-        webSettings.setSavePassword(true);
-        webSettings.setSaveFormData(true);
-        webSettings.setEnableSmoothTransition(true);
-        //timeline
-
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.setWebViewClient(new WebViewClient());
-
-
         final SharedPreferences preferences = this.getActivity().getSharedPreferences("dbneec", Context.MODE_PRIVATE);
 
         String cargo = preferences.getString("cargo", "erro");
 
-        if (cargo.contains("Membro") || cargo.contains("membro")) {
-            webView.loadUrl("http://neecapp.neec-fct.com/noaceess/");
-        } else {
-            webView.loadUrl("http://neecapp.neec-fct.com/historico/");
-        }
-        webView.getSettings().setAppCacheMaxSize(1024 * 1024 * 8);
+        if (!cargo.contains("Membro") || !cargo.contains("membro")) {
 
-        webView.getSettings().setAppCacheEnabled(true);
+
+            webView = (WebView) getView().findViewById(R.id.webview);
+
+            WebSettings webSettings = webView.getSettings();
+            webSettings.setJavaScriptEnabled(true);
+
+
+            //improve webView performance
+            webView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
+
+
+            webView.getSettings().setAppCacheEnabled(false);
+            webView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+
+            webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+            webSettings.setDomStorageEnabled(true);
+            webSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
+            webSettings.setUseWideViewPort(true);
+            webSettings.setSavePassword(true);
+            webSettings.setSaveFormData(true);
+            webSettings.setEnableSmoothTransition(true);
+            //timeline
+
+            webView.getSettings().setJavaScriptEnabled(true);
+            webView.setWebViewClient(new WebViewClient());
+
+            webView.loadUrl("http://neecapp.neec-fct.com/historico/");
+
+
+
+        }
 
 
     }

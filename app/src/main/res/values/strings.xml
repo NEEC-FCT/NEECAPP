@@ -11,16 +11,11 @@
     <string name="registar_re">Registar</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
-
     <string name="next">Próximo</string>
     <string name="skip">Saltar</string>
     <string name="start">Iniciar</string>
-
-
-
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
     <string name="action_settings">Settings</string>
     <string name="jortec_eletro">Jortec Eletro</string>
     <string name="geral_neec_fct_com">geral@neec-fct.com</string>
@@ -42,9 +37,13 @@
     <string name="receber_um_email_do_neec_com_a_sua_password">Receberá um email do neec com a sua password</string>
     <string name="clicar_no_cadeado_para_abrir_a_porta">Clicar no cadeado para abrir a Porta</string>
     <string name="recuperar_conta">Recuperar Conta</string>
-
     <string name="confirmar">Confirmar</string>
     <string name="mudar">Mudar</string>
     <string name="nova_password">Nova Password</string>
     <string name="vers_o_1_4">Versão 2.0</string>
+    <string name="vers_o_2_1">Versão 2.1</string>
+    <string name="sem_acesso">Sem Acesso</string>
+    <string name="jo_o_veloso">João Veloso</string>
+    <string name="todo">TODO</string>
+    <string name="logo_neec">Logo NEEC</string>
 </resources>
