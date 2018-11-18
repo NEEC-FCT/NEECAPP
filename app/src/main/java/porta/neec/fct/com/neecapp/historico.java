@@ -15,6 +15,8 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import static android.content.Context.MODE_PRIVATE;
+
 
 /**
  * Created by joaoveloso on 12/02/17.
@@ -65,7 +67,7 @@ public class historico extends Fragment {
 
         String cargo = preferences.getString("cargo", "erro");
 
-        if (!cargo.contains("Membro") || !cargo.contains("membro")) {
+        if (!cargo.contains("Membro") && !cargo.contains("membro")) {
 
 
             webView = (WebView) getView().findViewById(R.id.webview);
@@ -93,7 +95,14 @@ public class historico extends Fragment {
             webView.getSettings().setJavaScriptEnabled(true);
             webView.setWebViewClient(new WebViewClient());
 
-            webView.loadUrl("http://neecapp.neec-fct.com/historico/");
+
+            String MY_PREFS_NAME = "dbneec";
+            SharedPreferences prefs = getActivity().getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+
+            String email = prefs.getString("email", "erro");
+            String token = prefs.getString("token", "erro");
+
+            webView.loadUrl("http://neecapp.neec-fct.com/historico/?email=" + email + "&token=" + token);
 
 
 
