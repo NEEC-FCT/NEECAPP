@@ -24,6 +24,7 @@ import android.widget.ImageView;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -46,7 +47,6 @@ public class Porta extends Fragment {
     ProgressDialog progress;
 
     private View view;
-    private WebView webView;
 
     public boolean isInternetAvailable() {
         ConnectivityManager cm = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -75,6 +75,8 @@ public class Porta extends Fragment {
         getActivity().setTitle("Porta");
         Log.d("cargo", "oi");
 
+        FirebaseMessaging.getInstance().subscribeToTopic("Global");
+
 
         if (!isInternetAvailable()) {
             Intent intent = new Intent(getActivity(), semNet.class);
@@ -88,11 +90,11 @@ public class Porta extends Fragment {
             public void onResponse(String response) {
                 try {
                     JSONObject jsonResponse = new JSONObject(response);
-
-                    boolean success = jsonResponse.getBoolean("success");
                     System.out.println("check" + jsonResponse.toString());
+                    String success = jsonResponse.getString("success");
 
-                    if (!success) {
+
+                    if (success.contains("Cargo")) {
 
 
                         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -116,7 +118,6 @@ public class Porta extends Fragment {
                     }
 
                 } catch (JSONException e) {
-                    progress.dismiss();
                     e.printStackTrace();
                 }
             }
