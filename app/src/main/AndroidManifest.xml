@@ -3,7 +3,6 @@
     package="porta.neec.fct.com.neecapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    android:hardwareAccelerated="true"
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
@@ -15,11 +14,11 @@
 
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="NEEC"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-
         android:screenOrientation="portrait"
         >
 
@@ -64,11 +63,6 @@
             </intent-filter>
         </activity>
 
-
-
-
-
-
         <activity android:name="porta.neec.fct.com.neecapp.Register"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"
@@ -108,13 +102,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-
-
-
-
-
-
-
 
 
     </application>
