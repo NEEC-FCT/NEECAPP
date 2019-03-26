@@ -29,8 +29,6 @@ public class Novasenha extends AppCompatActivity {
     ProgressDialog progress;
 
 
-    ;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,9 +84,9 @@ public class Novasenha extends AppCompatActivity {
                         public void onResponse(String response) {
                             try {
 
+                                progress.dismiss();
                                 JSONObject jsonOResponse = new JSONObject(response);
                                 boolean sucess = jsonOResponse.getBoolean("success");
-                                progress.dismiss();
                                 if (sucess) {
                                     Toast.makeText(getApplicationContext(), "Password alterado com Sucesso", Toast.LENGTH_SHORT).show();
                                     SystemClock.sleep(730);
