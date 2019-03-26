@@ -54,6 +54,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        progress = new ProgressDialog(LoginActivity.this);
         ActivityCompat.requestPermissions(LoginActivity.this,
                 new String[]{Manifest.permission.READ_PHONE_STATE},
                 1);
@@ -96,7 +97,7 @@ public class LoginActivity extends AppCompatActivity {
 
             public void onClick(View v) {
 
-                Intent intent = new Intent(LoginActivity.this, Esquceu.class);
+                Intent intent = new Intent(LoginActivity.this, Esqueceu.class);
 
                 LoginActivity.this.startActivity(intent);
 
