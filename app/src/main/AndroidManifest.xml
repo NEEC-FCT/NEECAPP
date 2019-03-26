@@ -68,7 +68,7 @@
             android:screenOrientation="portrait"
             />
 
-        <activity android:name="porta.neec.fct.com.neecapp.Esquceu"
+        <activity android:name="porta.neec.fct.com.neecapp.Esqueceu"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"/>
 

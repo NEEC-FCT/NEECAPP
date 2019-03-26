@@ -1,5 +1,6 @@
 package porta.neec.fct.com.neecapp;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -26,15 +27,10 @@ import porta.neec.fct.com.neecapp.request.EsqueceuRequest;
  * Created by Veloso on 06/08/2017.
  */
 
-public class Esquceu extends AppCompatActivity {
+public class Esqueceu extends AppCompatActivity {
 
 
-    public boolean isInternetAvailable() {
-        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-
-        return cm.getActiveNetworkInfo() != null;
-
-    }
+    ProgressDialog progress;
 
     @Override
 
@@ -75,11 +71,15 @@ public class Esquceu extends AppCompatActivity {
 
                 } else {
 
+                    progress = ProgressDialog.show(Esqueceu.this, "Loading..",
+                            "Verificando seja paciente", true);
+
                     // Response received from the server
                     Response.Listener<String> responseListener = new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
                             try {
+                                progress.dismiss();
                                 JSONObject jsonResponse = new JSONObject(response);
                                 dlgAlert.setMessage("Verifica o email pelo Código");
                                 dlgAlert.setTitle("NEEC");
@@ -88,8 +88,8 @@ public class Esquceu extends AppCompatActivity {
                                 dlgAlert.create().show();
 
 
-                                Intent intent = new Intent(Esquceu.this, Novasenha.class);
-                                Esquceu.this.startActivity(intent);
+                                Intent intent = new Intent(Esqueceu.this, Novasenha.class);
+                                Esqueceu.this.startActivity(intent);
 
 
                             } catch (JSONException e) {
