@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
@@ -26,12 +27,12 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import porta.neec.fct.com.neecapp.request.RegisterRequest;
+
 public class Register extends AppCompatActivity {
 
     ProgressDialog progress;
 
-
-    ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,17 +96,17 @@ public class Register extends AppCompatActivity {
 
 
                     progress = ProgressDialog.show(Register.this, "Loading..",
-                            "Verificando", true);
+                            "Verificando seja paciente", true);
 
 
                     Response.Listener<String> responListerner = new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
                             try {
-
+                                progress.dismiss();
                                 JSONObject jsonOResponse = new JSONObject(response);
                                 boolean sucess = jsonOResponse.getBoolean("success");
-                                progress.dismiss();
+
                                 if (sucess) {
                                     Toast.makeText(getApplicationContext(), "Registado com Sucesso", Toast.LENGTH_SHORT).show();
                                     SystemClock.sleep(730);
@@ -132,7 +133,11 @@ public class Register extends AppCompatActivity {
                     @SuppressLint("MissingPermission") String IMEI = telephonyManager.getDeviceId();
 
                     String android_id = Secure.getString(getApplicationContext().getContentResolver(), Secure.ANDROID_ID);
-                    RegisterClass registerrequest = new RegisterClass(username, password, android_id, IMEI, responListerner);
+                    RegisterRequest registerrequest = new RegisterRequest(username, password, android_id, IMEI, responListerner);
+                    registerrequest.setRetryPolicy(new DefaultRetryPolicy(
+                            9000,
+                            DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                            DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
                     RequestQueue queue = Volley.newRequestQueue(Register.this);
                     queue.add(registerrequest);
 
