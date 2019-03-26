@@ -304,8 +304,6 @@ public class Porta extends Fragment {
                                             MediaPlayer mp = MediaPlayer.create(getContext(), R.raw.electric_door);
                                             mp.start();
 
-                                        } else {
-
                                         }
 
                                         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());

@@ -22,7 +22,7 @@
         android:screenOrientation="portrait"
         >
 
-
+        <uses-library android:name="org.apache.http.legacy" android:required="false" />
 
         <service android:name="porta.neec.fct.com.neecapp.MyFirebaseMessagingService">
             <intent-filter>
