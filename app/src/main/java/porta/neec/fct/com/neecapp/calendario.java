@@ -62,7 +62,7 @@ public class calendario extends Fragment {
 
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("https://calendar.google.com/calendar/embed?src=campus.fct.unl.pt_iub6qrmtik1umvac1un2a8efb4%40group.calendar.google.com&ctz=Europe%2FLisbon");
+        webView.loadUrl("https://calendar.google.com/calendar/embed?src=campus.fct.unl.pt_mqplv94jemtrchcmgti76oao00%40group.calendar.google.com&ctz=Europe%2FLisbon");
         webView.getSettings().setAppCacheMaxSize(1024 * 1024 * 8);
 
         webView.getSettings().setAppCacheEnabled(true);
