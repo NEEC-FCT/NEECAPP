@@ -22,7 +22,7 @@ import static android.content.Context.MODE_PRIVATE;
  * Created by joaoveloso on 12/02/17.
  */
 
-public class historico extends Fragment {
+public class Historico extends Fragment {
 
     private WebView webView;
 
@@ -102,7 +102,7 @@ public class historico extends Fragment {
             String email = prefs.getString("email", "erro");
             String token = prefs.getString("token", "erro");
 
-            webView.loadUrl("http://neecapp.neec-fct.com/historico/?email=" + email + "&token=" + token);
+            webView.loadUrl("https://neecapp.neec-fct.com/historico/?email=" + email + "&token=" + token);
 
 
 
