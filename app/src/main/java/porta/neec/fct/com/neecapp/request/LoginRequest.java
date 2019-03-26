@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class LoginRequest extends StringRequest {
 
-    private static final String REGISTER_LOGIN_URL = "http://neecapp.neec-fct.com/LoginV2.php";
+    private static final String REGISTER_LOGIN_URL = "https://neecapp.neec-fct.com/LoginV2.php";
     private Map<String, String> params;
 
     public LoginRequest(String email, String password, String IMEI, Response.Listener<String> listener) {

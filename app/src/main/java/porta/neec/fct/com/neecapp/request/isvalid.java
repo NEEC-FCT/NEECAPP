@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class isvalid extends StringRequest {
 
-    private static final String REGISTER_LOGIN_URL = "http://neecapp.neec-fct.com/isvalid.php";
+    private static final String REGISTER_LOGIN_URL = "https://neecapp.neec-fct.com/isvalid.php";
     private Map<String, String> params;
 
     public isvalid(String email, String cargo, String token, String IMEI, Response.Listener<String> listener) {

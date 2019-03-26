@@ -1,11 +1,15 @@
 package porta.neec.fct.com.neecapp;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.provider.Settings.Secure;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.TelephonyManager;
@@ -35,6 +39,16 @@ public class Register extends AppCompatActivity {
         setContentView(R.layout.activity_register);
         String android_i = Secure.getString(getApplicationContext().getContentResolver(), Secure.ANDROID_ID);
         TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
         String IME = telephonyManager.getDeviceId();
 
         Log.d("Dados", IME);
@@ -115,7 +129,7 @@ public class Register extends AppCompatActivity {
 
 
                     TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-                    String IMEI = telephonyManager.getDeviceId();
+                    @SuppressLint("MissingPermission") String IMEI = telephonyManager.getDeviceId();
 
                     String android_id = Secure.getString(getApplicationContext().getContentResolver(), Secure.ANDROID_ID);
                     RegisterClass registerrequest = new RegisterClass(username, password, android_id, IMEI, responListerner);

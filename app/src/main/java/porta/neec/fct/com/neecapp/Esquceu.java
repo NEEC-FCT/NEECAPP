@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
@@ -99,6 +100,9 @@ public class Esquceu extends AppCompatActivity {
 
 
                     EsqueceuRequest loginRequest = new EsqueceuRequest(email, responseListener);
+                    loginRequest.setRetryPolicy(new DefaultRetryPolicy(8000,
+                            DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                            DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
                     RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
                     queue.add(loginRequest);
 

@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class abrirPorta extends StringRequest {
 
-    private static final String REGISTER_LOGIN_URL = "http://neecapp.neec-fct.com/portav2.php";
+    private static final String REGISTER_LOGIN_URL = "https://neecapp.neec-fct.com/portav2.php";
     private Map<String, String> params;
 
     public abrirPorta(String email, String cargo, String token, String IMEI, Response.Listener<String> listener) {
