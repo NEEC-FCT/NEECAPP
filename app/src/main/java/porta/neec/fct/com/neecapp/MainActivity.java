@@ -123,16 +123,7 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
 
-        } else if (id == R.id.about) {
-
-            calendario fragment = new calendario();
-            android.support.v4.app.FragmentTransaction fragmentTransaction =
-                    getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left);
-            fragmentTransaction.replace(R.id.fragment_container, fragment);
-            fragmentTransaction.commit();
-
-        } else if (id == R.id.log) {
+        }  else if (id == R.id.log) {
             File f = getFileStreamPath("data");
             f.delete();
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);

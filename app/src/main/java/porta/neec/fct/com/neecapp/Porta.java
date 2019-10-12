@@ -196,7 +196,7 @@ public class Porta extends Fragment {
                         Log.d("ssid", MAC);
 
 
-                        if (ssid.contains("NEEC") && MAC.contains("30:b5:c2:c2:db:66")) {
+                        if (ssid.contains("NEEC") && ( MAC.contains("30:b5:c2:c2:db:66")  || MAC.contains("04:d4:c4:dc:0a:70") || MAC.contains("04:d4:c4:dc:0a:74") || MAC.contains("04:D4:C4:DC:0A:70") || MAC.contains("04:D4:C4:DC:0A:74")) ) {
 
                             // Response received from the server
                             Response.Listener<String> responseListener = new Response.Listener<String>() {

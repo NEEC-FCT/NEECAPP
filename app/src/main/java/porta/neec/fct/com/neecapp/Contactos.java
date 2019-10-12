@@ -62,7 +62,7 @@ public class Contactos extends Fragment {
 
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("http://neecapp.neec-fct.com/lista/");
+        webView.loadUrl("https://neecapp.neec-fct.com/lista/");
         webView.getSettings().setAppCacheMaxSize(1024 * 1024 * 8);
 
         webView.getSettings().setAppCacheEnabled(true);

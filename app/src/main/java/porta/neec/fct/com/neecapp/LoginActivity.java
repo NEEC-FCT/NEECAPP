@@ -56,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
 
         progress = new ProgressDialog(LoginActivity.this);
         ActivityCompat.requestPermissions(LoginActivity.this,
-                new String[]{Manifest.permission.READ_PHONE_STATE},
+                new String[]{Manifest.permission.READ_PHONE_STATE , Manifest.permission.ACCESS_FINE_LOCATION , Manifest.permission.ACCESS_COARSE_LOCATION},
                 1);
 
 
